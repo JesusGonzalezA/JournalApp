@@ -12,7 +12,7 @@ export const LoginScreen = () => {
                     placeholder="E-mail"
                     name="email"
                     className="auth__input"
-                    autocomplete="off"
+                    autoComplete="off"
                 />
 
                 <input  
