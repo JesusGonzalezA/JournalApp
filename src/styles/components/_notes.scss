@@ -17,3 +17,56 @@
 .notes__appbar button {
     font-size: 16px;
 }
+
+.notes__main-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.notes__content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.notes__title-input {
+    border: none;
+    font-size: 25px;
+    font-weight: 700;
+    color: $dark-grey;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.notes__text-area {
+    border: none;
+    color: $dark-grey;
+    font-size: 20px;
+    flex: 1 1 auto;
+    resize: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.notes__image{
+
+    img{
+        box-shadow: 5px 5px $dark-grey;
+        width: 300px;
+
+        transition: transform 0.2s ease;
+    }
+
+    
+
+    img:hover {
+        transform: scale(1.05);
+    }
+    
+}
