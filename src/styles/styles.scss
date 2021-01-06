@@ -1,5 +1,9 @@
 
+// Base partials
 @import './base/settings';
 @import './base/base';
 @import './base/margins';
 @import './base/cursors';
+
+// Components
+@import './components/auth'
