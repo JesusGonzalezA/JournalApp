@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -16,6 +16,8 @@ export const AppRouter = () => {
 
     const dispatch = useDispatch();
 
+    const [checking, setChecking] = useState(true);
+
     useEffect(() => {
 
         firebase.auth().onAuthStateChanged( (user) => {
@@ -24,10 +26,20 @@ export const AppRouter = () => {
                 dispatch( login(user.uid, user.displayName) );
             }
 
+            setChecking(false);
+
         });
     
-    }, [ dispatch ]);
+    }, [ dispatch, setChecking ]);
 
+    if ( checking ) {
+        return (
+            <div className="preloader__container">
+                <h1 className="preloader__title mb-5">Loading...</h1>
+                <div className='preloader__preloader'></div>
+            </div>
+        )
+    }
 
     return (
         <Router>

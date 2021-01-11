@@ -1,0 +1,34 @@
+.preloader__container {
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.preloader__title {
+    color: $white;
+}
+
+.preloader__preloader {
+    width: 70px;
+    height: 70px;
+    border: 10px solid $white;
+    border-top: 10px solid darken($color: $primary, $amount: 20);
+    border-radius: 50%;
+    margin: 10px;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+    @keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
