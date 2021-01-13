@@ -21,8 +21,10 @@ export const JournalEntry = ({ id, title, date, url, body }) => {
 
             <div className="journal__entry-body">
                 <p className="journal__entry-title">
+                    {title}
                 </p>
                 <p className="journal__entry-content">
+                    {body}
                 </p>
             </div>
 
