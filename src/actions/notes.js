@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 import { db } from "../firebase/firebaseConfig";
 import { loadNotes } from "../helpers/loadNotes";
 import { types } from "../types/types";
@@ -17,9 +18,17 @@ export const startNewNote = () => {
         const docRef = await db.collection(`${uid}/journal/notes`).add(newNote);   
 
         dispatch( activateNote( docRef.id, newNote ));
+        dispatch( addNote( docRef.id, newNote) );
     }
 }
 
+export const addNote = ( id, note ) => ({
+    type: types.notesAddNew,
+    payload: {
+        id,
+        ...note
+    }
+})
 export const activateNote = ( id, note ) => ({
     type: types.notesActive,
     payload: {
@@ -57,6 +66,7 @@ export const startSaveNote = ( note ) => {
         await db.doc(`${uid}/journal/notes/${note.id}`).update( noteToFirestore)
 
         dispatch( updateNote( note.id, note ));
+        Swal.fire('Saved', note.title, 'success');
     }
 }
 
