@@ -3,7 +3,7 @@
         notes: [],
         active: null,
         active: {
-            od: 'KAJSASKJASJK',
+            id: 'KAJSASKJASJK',
             title: '',
             body: '',
             imageUrl: '',
