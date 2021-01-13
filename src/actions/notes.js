@@ -46,9 +46,26 @@ export const startSaveNote = ( note ) => {
 
         const { uid } = getState().auth;
 
+        if ( !note.url ){
+            delete note.url;
+        }
+
+
         const noteToFirestore = { ...note };
         delete noteToFirestore.id;
 
         await db.doc(`${uid}/journal/notes/${note.id}`).update( noteToFirestore)
+
+        dispatch( updateNote( note.id, note ));
+    }
+}
+
+export const updateNote = ( id, note ) => {
+    return {
+        type: types.notesUpdate,
+        payload: {
+            note, 
+            id
+        }
     }
 }

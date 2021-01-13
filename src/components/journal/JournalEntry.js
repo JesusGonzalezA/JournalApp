@@ -5,16 +5,19 @@ import moment from 'moment'
 import { useDispatch } from 'react-redux';
 import { activateNote } from '../../actions/notes';
 
-export const JournalEntry = ({ id, body: note }) => {
-
+export const JournalEntry = ({ id, date, title, body, url }) => {
+    
     const dispatch = useDispatch();
-    const {title, date, url, body} = note;
     
     const noteDate = moment(date);
 
     const handleActivateNote = () => {
 
-        dispatch( activateNote(id, note ));
+        dispatch( 
+            activateNote(id, {
+                date, title, body, url
+            })
+        );
         
     }
     
