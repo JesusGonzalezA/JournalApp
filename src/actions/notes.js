@@ -110,6 +110,7 @@ export const startDeleteNote = ( ) => {
     return async (dispatch, getState) => {
         const { uid } = getState().auth;
         const { active:activeNote } = getState().notes;
+        const { title } = activeNote;
 
         Swal.fire({
             title: 'Deleting...',
@@ -127,6 +128,7 @@ export const startDeleteNote = ( ) => {
         dispatch(deleteNote(activeNote.id));
 
         Swal.close();
+        Swal.fire('Deleted', title, 'success');
     }
 }
 
