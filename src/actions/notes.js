@@ -104,3 +104,33 @@ export const startUploading = ( file ) => {
         Swal.close();
     }
 }
+
+export const startDeleteNote = ( ) => {
+
+    return async (dispatch, getState) => {
+        const { uid } = getState().auth;
+        const { active:activeNote } = getState().notes;
+
+        Swal.fire({
+            title: 'Deleting...',
+            text: 'Please wait...',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
+        // Delete from firebase
+        await db.doc(`${uid}/journal/notes/${activeNote.id}`).delete();
+        
+        // Delete from the store
+        dispatch(deleteNote(activeNote.id));
+
+        Swal.close();
+    }
+}
+
+export const deleteNote = (id) => ({
+    type: types.notesDelete,
+    payload: id
+})
