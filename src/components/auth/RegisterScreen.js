@@ -60,7 +60,10 @@ export const RegisterScreen = () => {
         <>
             <h1 className="auth__title mb-5">Sign up</h1>
 
-            <form onSubmit={ handleRegister }>
+            <form 
+                className="animate__animated animate__fadeIn animate__faster"
+                onSubmit={ handleRegister }
+            >
 
                 {
                     msgError && 

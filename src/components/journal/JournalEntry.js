@@ -22,7 +22,10 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
     }
     
     return (
-        <div className="journal__entry pointer" onClick={handleActivateNote}>
+        <div 
+            className="journal__entry pointer animate__animated animate__fadeIn animate__faster" 
+            onClick={handleActivateNote}
+        >
             {
                 (url)
                 ? (

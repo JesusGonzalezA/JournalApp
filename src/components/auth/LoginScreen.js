@@ -49,7 +49,10 @@ export const LoginScreen = () => {
         <>
             <h1 className="auth__title mb-5">Login</h1>
 
-            <form onSubmit={ handleLogin }>
+            <form 
+                className="animate__animated animate__fadeIn animate__faster"
+                onSubmit={ handleLogin }
+            >
                 {
                     msgError && 
                     <div className="auth__alert-error">
