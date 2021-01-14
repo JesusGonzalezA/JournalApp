@@ -14,4 +14,4 @@ You can create notes, add images to them and register/login with your email or v
 :+1: Thunk \
 :+1: Sass 
 
-:microscope: **Tests**: You can find them in src/tests. I used Jest and Enzyme for this issue. \
+:microscope: **Tests**: You can find them in src/tests. I used Jest and Enzyme for this issue.
