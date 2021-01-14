@@ -13,7 +13,7 @@ export const startNewNote = () => {
         const newNote = {
             title: '',
             body: '',
-            date: new Date().getTime()
+            date: new Date().getTime(),
         }
 
         const docRef = await db.collection(`${uid}/journal/notes`).add(newNote);   

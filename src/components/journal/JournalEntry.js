@@ -24,15 +24,28 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
     return (
         <div className="journal__entry pointer" onClick={handleActivateNote}>
             {
-                url &&
-                <div 
-                    className="journal__entry-picture"
-                    style={{
-                        backgroundSize: 'cover',
-                        backgroundImage: `url(${url})`
-                    }}
-                >
-                </div>
+                (url)
+                ? (
+                    <div 
+                        className="journal__entry-picture"
+                        style={{
+                            backgroundSize: 'cover',
+                            backgroundImage: `url(${url})`
+                        }}
+                    >
+                    </div>
+                )
+                :
+                (
+                    <div 
+                        className="journal__entry-picture"
+                        style={{
+                            backgroundSize: 'cover',
+                            backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd-y-IJN8glQlf1qoU01dEgGPUa0d1-sjfWg&usqp=CAU)'
+                        }}
+                    >
+                    </div>
+                )
             }
 
             <div className="journal__entry-body">
