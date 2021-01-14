@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Redirect
   } from "react-router-dom";
@@ -64,7 +64,7 @@ export const AppRouter = () => {
                         component={ JournalScreen } 
                     />
 
-                    <Redirect to="/auth/login" />
+                    <Redirect to="auth/login" />
                 </Switch>
             </div>
         </Router>
