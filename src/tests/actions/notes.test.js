@@ -1,6 +1,7 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk'
 import { startNewNote } from '../../actions/notes';
+import { db } from '../../firebase/firebaseConfig';
 import { types } from '../../types/types';
  
 const middlewares = [thunk];
@@ -39,6 +40,11 @@ describe('Testing notes Actions', () => {
                 date: expect.any(Number)
             }
         })
+
+        // Delete the note
+        const docId = actions[0].payload.id;
+        await db.doc(`uidTestingExample/journal/notes/${docId}`).delete();
+        
     })
     
 })
