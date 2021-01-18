@@ -66,6 +66,6 @@ export const startLogout = () => {
     }
 }
 
-const logout = () => ({
+export const logout = () => ({
     type: types.logout
 })
