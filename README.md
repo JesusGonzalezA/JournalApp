@@ -5,6 +5,8 @@ You can create notes, add images to them and register/login with your email or v
  https://jesusgonzaleza.github.io/JournalApp/
 ![](demo/demo.gif)
 
+:warning: **I may have deleted the firebase connection. You can create one and set it up on the .env.* archives.**
+
 
 ## :star: What I've learnt...
 
