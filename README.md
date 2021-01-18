@@ -12,6 +12,8 @@ You can create notes, add images to them and register/login with your email or v
 :+1: FirebaseAuth \
 :+1: Redux \
 :+1: Thunk \
+:+1: Env variables \
+:+1: Production/Testing/Build environment \
 :+1: Sass 
 
 :microscope: **Tests**: You can find them in src/tests. I used Jest and Enzyme for this issue.
