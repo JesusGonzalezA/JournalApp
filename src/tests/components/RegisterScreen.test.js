@@ -75,6 +75,27 @@ describe('Testing Register Screen Component', () => {
         })
     })
     
+    test('should show the error in the html', () => {
+        const inititalState = {
+            ui: {
+                loading: false,
+                msgError: 'Testing error'
+            }
+        };
+        const store = mockStore( inititalState );
+        
+        const wrapper = mount( 
+            <Provider store={store}>
+                <MemoryRouter>
+                    <RegisterScreen />
+                </MemoryRouter>
+            </Provider>
+        );
+
+        const errorBox = wrapper.find('.auth__alert-error')
+        expect( errorBox.exists() ).toBe(true)
+        expect( errorBox.text().trim() ).toBe('Testing error')
+    })
     
     
 })
